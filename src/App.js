@@ -1,7 +1,66 @@
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import axios from "axios";
+import Grid from "./components/Grid";
+import Loading from "./components/Loading";
+import Error from "./components/Error";
+const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
 function App() {
-  return <h1>News App</h1>;
+  const [data, setData] = useState(null);
+  const [country, setCountry] = useState("in");
+  const [isLoading, setLoading] = useState(true);
+  // eslint-disable-next-line
+  const [category, setCategory] = useState("");
+  const [query, setQuery] = useState("");
+  const [error, setError] = useState("");
+  const [totalResults, setTotalResults] = useState(0);
+
+  useEffect(() => {
+    const fetch = async () => {
+      setLoading(true);
+      try {
+        const {
+          data: { articles, totalResults },
+        } = await axios.get(
+          `https://newsapi.org/v2/top-headlines?country=${country}&q=${query}&category=${category}&pageSize=100`,
+          {
+            headers: {
+              authorization: API_KEY,
+            },
+          }
+        );
+        setData(articles);
+        setTotalResults(totalResults);
+        console.log(articles);
+        console.log(totalResults);
+      } catch (e) {
+        setError(e);
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetch();
+    // eslint-disable-next-line
+  }, [category, query]);
+  return (
+    <>
+      <Navbar
+        setCountry={setCountry}
+        getQuery={setQuery}
+        setCategory={setCategory}
+      />
+      {isLoading ? (
+        <Loading />
+      ) : error ? (
+        <Error />
+      ) : (
+        <Grid data={data} totalResults={totalResults} />
+      )}
+    </>
+  );
 }
 
 export default App;

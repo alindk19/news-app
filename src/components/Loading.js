@@ -1,11 +1,8 @@
 import React from "react";
+import loading from "../images/loading.gif";
 
 const Loading = () => {
-  return (
-    <div>
-      <h1>Loading...</h1>
-    </div>
-  );
+  return <img className="loading" src={loading} alt="Loading..." />;
 };
 
 export default Loading;

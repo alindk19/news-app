@@ -3,9 +3,7 @@ import React from "react";
 const Card = ({ article }) => {
   return (
     <div className="card">
-      <div className="image">
-        <img src={article.urlToImage} alt="" />
-      </div>
+      <img src={article.urlToImage} alt="article" />
       <div className="card-details">
         <p mode="multi" className="card-title">
           {article.title}
@@ -13,15 +11,16 @@ const Card = ({ article }) => {
         {/* <p mode="multi" className="card-desc">
           {article.description}
         </p> */}
-        <span>
+        <span className="author">
           Author: <strong></strong>
           {article.author ? article.author : "Anonymous"}
         </span>
-        <br />
-        <span>Source: </span>
-        <a href={article.url} target="blank">
-          {article.source.name}
-        </a>
+        <span className="source">
+          Source:
+          <a href={article.url} target="blank">
+            {article.source.name}
+          </a>
+        </span>
       </div>
     </div>
   );

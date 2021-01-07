@@ -6,13 +6,13 @@ const Pagination = ({ articlesPerPage, setCurrentPage, totalResults }) => {
     pageNumbers.push(i);
   }
   return (
-    <nav>
+    <nav className="pagination-footer">
       <ul className="pagination">
         {pageNumbers.map((number) => (
-          <li key={number}>
-            <a href="!#" onClick={() => setCurrentPage(number)}>
+          <li className="page-item" key={number}>
+            <p className="page-link" onClick={() => setCurrentPage(number)}>
               {number}
-            </a>
+            </p>
           </li>
         ))}
       </ul>

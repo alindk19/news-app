@@ -9,7 +9,7 @@ const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
 function App() {
   const [data, setData] = useState(null);
-  const [country, setCountry] = useState("in");
+  const [country, setCountry] = useState("ar");
   const [isLoading, setLoading] = useState(true);
   // eslint-disable-next-line
   const [category, setCategory] = useState("");
@@ -44,10 +44,12 @@ function App() {
     };
     fetch();
     // eslint-disable-next-line
-  }, [category, query]);
+  }, [category, query, country]);
   return (
     <>
       <Navbar
+        category={category}
+        country={country}
         setCountry={setCountry}
         getQuery={setQuery}
         setCategory={setCategory}
@@ -55,7 +57,7 @@ function App() {
       {isLoading ? (
         <Loading />
       ) : error ? (
-        <Error />
+        <Error error={error} />
       ) : (
         <Grid data={data} totalResults={totalResults} />
       )}

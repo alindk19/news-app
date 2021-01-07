@@ -9,17 +9,19 @@ const Grid = ({ data, totalResults }) => {
   const indexOfFirstPage = indexOfLastArticle - articlesPerPage;
   const currentArticles = data.slice(indexOfFirstPage, indexOfLastArticle);
   return (
-    <section className="grid">
-      {currentArticles &&
-        currentArticles.map((article, index) => (
-          <Card key={index} article={article} />
-        ))}
+    <>
+      <section className="grid">
+        {currentArticles &&
+          currentArticles.map((article, index) => (
+            <Card key={index} article={article} />
+          ))}
+      </section>
       <Pagination
         totalResults={totalResults}
         articlesPerPage={articlesPerPage}
         setCurrentPage={setCurrentPage}
       />
-    </section>
+    </>
   );
 };
 

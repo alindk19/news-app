@@ -1,5 +1,7 @@
 # News App - React
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3b76cb65-b04f-4e48-8bfa-9bceb9febc6a/deploy-status)](https://app.netlify.com/sites/quirky-wilson-b0dc3b/deploys)
+
 Application to view news stories from sources around the world.
 
 Built with [React](https://reactjs.org/) as frontend JavaScript framework.

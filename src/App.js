@@ -24,9 +24,10 @@ function App() {
         const {
           data: { articles, totalResults },
         } = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=${country}&q=${query}&category=${category}&pageSize=100`,
+          `http://newsapi.org/v2/top-headlines?country=${country}&q=${query}&category=${category}&pageSize=100`,
           {
             headers: {
+              "Access-Control-Allow-Origin": "*",
               authorization: API_KEY,
             },
           }

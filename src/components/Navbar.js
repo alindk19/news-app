@@ -9,7 +9,7 @@ const Navbar = ({ category, setCategory, getQuery, country, setCountry }) => {
     setCategory("");
   };
   const handleClick = (e) => {
-    // console.log(e);
+    //
     setCategory(e.target.id);
   };
 
@@ -85,7 +85,7 @@ const Navbar = ({ category, setCategory, getQuery, country, setCountry }) => {
         </li>
         <div className="category-selector">
           <span>Category: </span>
-          {console.log("Category:" + category)}
+          {}
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}

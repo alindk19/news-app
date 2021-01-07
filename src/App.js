@@ -33,11 +33,11 @@ function App() {
         );
         setData(articles);
         setTotalResults(totalResults);
-        console.log(articles);
-        console.log(totalResults);
+        //
+        //
       } catch (e) {
         setError(e);
-        console.log(error);
+        //
       } finally {
         setLoading(false);
       }

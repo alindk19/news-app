@@ -20,11 +20,12 @@ function App() {
   useEffect(() => {
     const fetch = async () => {
       setLoading(true);
+
       try {
         const {
           data: { articles, totalResults },
         } = await axios.get(
-          `http://newsapi.org/v2/top-headlines?country=${country}&q=${query}&category=${category}&pageSize=100`,
+          `https://newsapi.org/v2/top-headlines?country=${country}&q=${query}&category=${category}&pageSize=100`,
           {
             headers: {
               authorization: API_KEY,

@@ -123,6 +123,10 @@ html {
   justify-content: center;
 }
 
+.source {
+  font-size: 15px;
+}
+
 .pagination {
   list-style-type: none;
   display: flex;

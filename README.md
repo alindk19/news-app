@@ -1,8 +1,8 @@
 ## Note
 
-# This project is not deployed anywhere because [News API](https://newsapi.org/) has its free account services limited to localhost only. Hence this can only be run only on your `http://localhost:3000/`.
+### This project is not deployed anywhere because [News API](https://newsapi.org/) has its free account services limited to localhost only. Hence this can only be run only on your `http://localhost:3000/`.
 
-## News App - React
+# News App - React
 
 Application to view news stories from sources around the world.
 
